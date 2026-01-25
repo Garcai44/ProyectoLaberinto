@@ -3765,7 +3765,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279248626
-  m_fontColor: {r: 0.94716984, g: 0.14884384, b: 0.062548816, a: 1}
+  m_fontColor: {r: 0.9339623, g: 0.89021933, b: 0.885502, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4618,6 +4618,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloTrampa (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6479764490992380064, guid: 83b7dbed67775174c89774d02a6f8ebd,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7654106025511093333, guid: 83b7dbed67775174c89774d02a6f8ebd,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -4673,6 +4678,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7801155617322524852, guid: 83b7dbed67775174c89774d02a6f8ebd,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 755048150}
+    - target: {fileID: 7801155617322524852, guid: 83b7dbed67775174c89774d02a6f8ebd,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1215451718}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4798,6 +4813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SueloTrampa
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479764490992380064, guid: 83b7dbed67775174c89774d02a6f8ebd,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7654106025511093333, guid: 83b7dbed67775174c89774d02a6f8ebd,
         type: 3}
