@@ -1,40 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovimientoPuerta : MonoBehaviour
 {
-    public float openAngle = -90f;   // grados totales a girar
-    public float openSpeed = 30f;    // grados por segundo
-    private bool isOpen = false;     // abierta o cerrada la puerta
-    private float rotated = 0f;      // cuánto hemos girado ya
+    public float openAngle = -90f;   // puede ser positivo o negativo
+    public float openSpeed = 8f;    // grados por segundo
+    public AudioSource audioSource;
+    private bool isOpen = false;
+    private float rotated = 0f;
+    private float direction;
+
+    void Start()
+    {
+        direction = Mathf.Sign(openAngle); // +1 o -1
+    }
 
     public void OpenDoor()
     {
-        if (!isOpen) isOpen = true;
+        audioSource.Play();
+        if (!isOpen)
+            isOpen = true;
+      
     }
 
     void Update()
     {
-        if (isOpen)
+        if (!isOpen) return;
+
+        float step = openSpeed * Time.deltaTime;
+
+        if (rotated + step > Mathf.Abs(openAngle))
+            step = Mathf.Abs(openAngle) - rotated;
+
+        transform.Rotate(0, step * direction, 0, Space.Self);
+        rotated += step;
+
+        if (rotated >= Mathf.Abs(openAngle))
         {
-            float step = openSpeed * Time.deltaTime; // cuánto girar este frame
-
-            if (rotated + step > Mathf.Abs(openAngle))
-                step = Mathf.Abs(openAngle) - rotated; // no pasarse
-
-            transform.Rotate(0, -step, 0);
-            rotated += step;
-
-            if (rotated >= Mathf.Abs(openAngle))
-            {
-                isOpen = false; // terminado
-               
-            }
+            isOpen = false;
         }
     }
 }
-    
-
-
-   

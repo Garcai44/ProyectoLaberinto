@@ -8,7 +8,9 @@ public class MovimientoJugador : MonoBehaviour
     public float moveSpeed = 5f;      // Velocidad de avance / retroceso
     public float turnSpeed = 180f;    // Velocidad de giro (grados por segundo)
 
+
     private CharacterController controller;
+    
 
     void Start()
     {
@@ -16,6 +18,7 @@ public class MovimientoJugador : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
+    
     void Update()
     {
         //Obtener input del jugador
@@ -36,5 +39,7 @@ public class MovimientoJugador : MonoBehaviour
 
         //Aplicar movimiento usando CharacterController
         controller.Move(move);
+
+       
     }
 }
